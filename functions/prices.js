@@ -1,14 +1,14 @@
 const axios = require('axios');
 
-exports.handler = async () => {
-  const BRAND_NAME = 'mojcatering';
+exports.handler = async event => {
+  const brandName = event.queryStringParameters.companyName;
 
   try {
     const { data, status } = await axios({
-      url: `https://dietlyprod001front.herokuapp.com/api/open/company-details/${BRAND_NAME}/dietCaloriesDetails`,
+      url: `https://dietlyprod001front.herokuapp.com/api/open/company-details/${brandName}/dietCaloriesDetails`,
       headers: {
         'api-key': '123',
-        'company-id': BRAND_NAME,
+        'company-id': brandName,
       },
       withCredentials: true,
     });

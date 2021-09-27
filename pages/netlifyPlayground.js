@@ -1,4 +1,5 @@
 import React from 'react';
+import { BRAND_NAME } from '../config';
 
 const NetlifyPlayground = () => {
   const onClick = () => {
@@ -26,24 +27,20 @@ const NetlifyPlayground = () => {
     ],
   };
 
-  // const defaultMenus =
-  //   '%7B%22dietId%22%3A4%2C%22dates%22%3A%5B%222021-09-30%22%5D%7D';
-
   const fetchMenus = myMenus => {
-    fetch(`/.netlify/functions/menu?menus=${JSON.stringify(myMenus)}`, {
-      method: 'POST',
-      body: JSON.stringify({
-        url: myMenus,
-      }),
-    }).then(data => console.log('MENUS: ', data));
+    fetch(
+      `/.netlify/functions/menu?companyName=${BRAND_NAME}&menus=${JSON.stringify(
+        myMenus
+      )}`
+    ).then(data => console.log('MENUS: ', data));
   };
   const fetchDiets = () => {
-    fetch('/.netlify/functions/diets').then(data =>
+    fetch(`/.netlify/functions/diets?companyName=${BRAND_NAME}`).then(data =>
       console.log('DIETS: ', data)
     );
   };
   const fetchPrices = () => {
-    fetch('/.netlify/functions/prices').then(data =>
+    fetch(`/.netlify/functions/prices?companyName=${BRAND_NAME}`).then(data =>
       console.log('PRICES: ', data)
     );
   };
