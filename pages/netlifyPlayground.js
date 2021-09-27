@@ -53,8 +53,8 @@ const NetlifyPlayground = () => {
       <p>This is netlify playground</p>
       <button onClick={onClick}>Testowy fetch</button>
       <button onClick={() => fetchMenus(defaultMenus)}>Pobierz menu</button>
-      <button onClick={fetchDiets}>Pobierz diety</button>
-      <button onClick={fetchPrices}>Pobierz ceny</button>
+      {/*<button onClick={fetchDiets}>Pobierz diety</button>*/}
+      {/*<button onClick={fetchPrices}>Pobierz ceny</button>*/}
     </div>
   );
 };
