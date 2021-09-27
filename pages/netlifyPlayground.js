@@ -8,28 +8,33 @@ const NetlifyPlayground = () => {
   };
 
   const defaultMenus = {
-    dietId: 581,
+    dietId: 4,
     dates: [
       '2021-09-27',
-      '2021-09-26',
-      '2021-09-25',
-      '2021-09-24',
-      '2021-09-23',
-      '2021-09-22',
-      '2021-09-21',
-      '2021-09-20',
-      '2021-09-28',
-      '2021-09-29',
-      '2021-09-30',
-      '2021-10-01',
-      '2021-10-02',
+      // '2021-09-26',
+      // '2021-09-25',
+      // '2021-09-24',
+      // '2021-09-23',
+      // '2021-09-22',
+      // '2021-09-21',
+      // '2021-09-20',
+      // '2021-09-28',
+      // '2021-09-29',
+      // '2021-09-30',
+      // '2021-10-01',
+      // '2021-10-02',
     ],
   };
 
-  const fetchMenus = menusy => {
-    fetch('/.netlify/functions/menu', {
+  // const defaultMenus =
+  //   '%7B%22dietId%22%3A4%2C%22dates%22%3A%5B%222021-09-30%22%5D%7D';
+
+  const fetchMenus = myMenus => {
+    fetch(`/.netlify/functions/menu?menus=${JSON.stringify(myMenus)}`, {
       method: 'POST',
-      body: JSON.stringify(menusy),
+      body: JSON.stringify({
+        url: myMenus,
+      }),
     }).then(data => console.log('MENUS: ', data));
   };
   const fetchDiets = () => {
