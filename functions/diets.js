@@ -1,12 +1,11 @@
 const axios = require('axios');
 
-exports.handler = async event => {
-  const encodedMenus = encodeURIComponent(event.queryStringParameters.menus);
+exports.handler = async () => {
   const BRAND_NAME = 'mojcatering';
 
   try {
     const { data, status } = await axios({
-      url: `https://dietlyprod001front.herokuapp.com/api/open/company-details/${BRAND_NAME}/menus?searchCriteria=${encodedMenus}`,
+      url: `https://dietlyprod001front.herokuapp.com/api/open/company-details/${BRAND_NAME}/dietDetails`,
       headers: {
         'api-key': '123',
         'company-id': BRAND_NAME,

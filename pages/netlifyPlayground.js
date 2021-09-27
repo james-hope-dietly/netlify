@@ -37,24 +37,24 @@ const NetlifyPlayground = () => {
       }),
     }).then(data => console.log('MENUS: ', data));
   };
-  // const fetchDiets = () => {
-  //   fetch('/.netlify/functions/diets').then(data =>
-  //     console.log('DIETS: ', data)
-  //   );
-  // };
-  // const fetchPrices = () => {
-  //   fetch('/.netlify/functions/prices').then(data =>
-  //     console.log('PRICES: ', data)
-  //   );
-  // };
+  const fetchDiets = () => {
+    fetch('/.netlify/functions/diets').then(data =>
+      console.log('DIETS: ', data)
+    );
+  };
+  const fetchPrices = () => {
+    fetch('/.netlify/functions/prices').then(data =>
+      console.log('PRICES: ', data)
+    );
+  };
 
   return (
     <div>
       <p>This is netlify playground</p>
       <button onClick={onClick}>Testowy fetch</button>
       <button onClick={() => fetchMenus(defaultMenus)}>Pobierz menu</button>
-      {/*<button onClick={fetchDiets}>Pobierz diety</button>*/}
-      {/*<button onClick={fetchPrices}>Pobierz ceny</button>*/}
+      <button onClick={fetchDiets}>Pobierz diety</button>
+      <button onClick={fetchPrices}>Pobierz ceny</button>
     </div>
   );
 };
