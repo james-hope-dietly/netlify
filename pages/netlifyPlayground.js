@@ -37,16 +37,16 @@ const NetlifyPlayground = () => {
       }),
     }).then(data => console.log('MENUS: ', data));
   };
-  const fetchDiets = () => {
-    fetch('/.netlify/functions/diets').then(data =>
-      console.log('DIETS: ', data)
-    );
-  };
-  const fetchPrices = () => {
-    fetch('/.netlify/functions/prices').then(data =>
-      console.log('PRICES: ', data)
-    );
-  };
+  // const fetchDiets = () => {
+  //   fetch('/.netlify/functions/diets').then(data =>
+  //     console.log('DIETS: ', data)
+  //   );
+  // };
+  // const fetchPrices = () => {
+  //   fetch('/.netlify/functions/prices').then(data =>
+  //     console.log('PRICES: ', data)
+  //   );
+  // };
 
   return (
     <div>
