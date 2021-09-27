@@ -1,10 +1,12 @@
 const axios = require('axios');
-exports.handler = async () => {
-  console.log('function requests ran');
+exports.handler = async menusy => {
+  console.log('function menus ran');
+
+  console.log('menus: ', menusy);
 
   try {
     const { data, status } = await axios({
-      url: `https://dietlyprod001front.herokuapp.com/api/dietly/open/cities/all`,
+      url: `https://dietlyprod001front.herokuapp.com/api/open/company-details/afterfit/menus?searchCriteria=${menusy}`,
       headers: {
         'api-key': '123',
         'company-id': 'afterfit',
