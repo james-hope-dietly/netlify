@@ -46,12 +46,25 @@ const NetlifyPlayground = () => {
   };
 
   return (
-    <div>
+    <div className="netlify-playground">
       <p>This is netlify playground</p>
-      <button onClick={onClick}>Testowy fetch</button>
-      <button onClick={() => fetchMenus(defaultMenus)}>Pobierz menu</button>
-      <button onClick={fetchDiets}>Pobierz diety</button>
-      <button onClick={fetchPrices}>Pobierz ceny</button>
+      <div>
+        <button className="netlify-playground-button" onClick={onClick}>
+          Testowy fetch
+        </button>
+        <button
+          className="netlify-playground-button"
+          onClick={() => fetchMenus(defaultMenus)}
+        >
+          Pobierz menu
+        </button>
+        <button className="netlify-playground-button" onClick={fetchDiets}>
+          Pobierz diety
+        </button>
+        <button className="netlify-playground-button" onClick={fetchPrices}>
+          Pobierz ceny
+        </button>
+      </div>
     </div>
   );
 };

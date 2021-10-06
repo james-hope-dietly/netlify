@@ -14,3 +14,22 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.netlify-playground{
+  background: #fefae0;
+  color: #283618;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: sans-serif;
+  font-size: 30px;
+}
+.netlify-playground-button{
+  background: #606c38;
+  height: 40px;
+  border-radius: 6px;
+  margin: 2px;
+  color: #fefae0;
+}
